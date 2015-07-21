@@ -3,13 +3,13 @@
 one:
   name: MyString
   screen_name: MyString
-  user_id: MyString
+  uid: MyString
   oauth_token: MyString
   oauth_token_secret: MyString
 
 two:
   name: MyString
   screen_name: MyString
-  user_id: MyString
+  uid: MyString
   oauth_token: MyString
   oauth_token_secret: MyString
