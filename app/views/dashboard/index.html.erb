@@ -1095,9 +1095,29 @@ media-forward
                           </button>
                         </div>
 
-                        <%= link_to "Retweet! (#{tweet.retweet_count})", retweet_path(id: tweet.id), method: :post %>
 
-                        
+                        <div class="ProfileTweet-action ProfileTweet-action--retweet js-toggleState js-toggleRt">
+                          <button class="ProfileTweet-actionButton  js-actionButton js-actionRetweet js-tooltip"
+                                  title="Retweet"
+                                  data-modal="ProfileTweet-retweet"
+                                  type="button">
+                            <span class="Icon Icon--retweet"></span>
+                            <span class="u-hiddenVisually">Retweet</span>
+            <span class="ProfileTweet-actionCount">
+              <span class="ProfileTweet-actionCountForPresentation" aria-hidden="true"><%= tweet.retweet_count %></span>
+            </span>
+                          </button><button class="ProfileTweet-actionButtonUndo js-actionButton js-actionRetweet js-tooltip"
+                                           data-modal="ProfileTweet-retweet"
+                                           title="Undo retweet"
+                                           type="button">
+                          <span class="Icon Icon--retweet"></span>
+                          <span class="u-hiddenVisually">Retweeted</span>
+                          <span class="ProfileTweet-actionCount">
+                            <span class="ProfileTweet-actionCountForPresentation" aria-hidden="true"><%= tweet.retweet_count %></span>
+                          </span>
+                        </button>
+                        </div>
+
                         <%= link_to "Favorite! (#{tweet.favorite_count})", tweet_path(id: tweet.id), method: :put %>
 
 

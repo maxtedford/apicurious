@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index', as: :dashboard
   
   resources :tweets, only: [:create, :update]
-  put '/tweet/:id', to: 'tweets#retweet', as: :retweet
   
   root 'welcome#index'
 end

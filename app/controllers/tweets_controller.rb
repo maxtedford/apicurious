@@ -9,9 +9,4 @@ class TweetsController < ApplicationController
     current_user.favorite(params[:id])
     redirect_to dashboard_path
   end
-  
-  def retweet
-    current_user.retweet(params[:id])
-    redirect_to dashboard_path
-  end
 end
