@@ -27,6 +27,26 @@ class User < ActiveRecord::Base
   end
   
   def current_profile
-    twitter_client.user
+    @user ||= twitter_client.user
+  end
+  
+  def profile_pic
+    current_profile.profile_image_url
+  end
+  
+  def tweets_count
+    current_profile.tweets_count
+  end
+  
+  def friends_count
+    current_profile.friends_count
+  end
+  
+  def followers_count
+    current_profile.followers_count
+  end
+  
+  def post_tweet(tweet)
+    twitter_client.update(tweet)
   end
 end

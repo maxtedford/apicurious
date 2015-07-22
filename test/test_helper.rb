@@ -3,6 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'rails/test_help'
+require 'pry'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

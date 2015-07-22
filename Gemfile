@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'twitter'
+gem 'twitter-text'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,5 +46,6 @@ group :development, :test do
   gem 'spring'
   
   gem 'capybara'
+  gem 'pry'
 end
 
