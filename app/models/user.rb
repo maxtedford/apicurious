@@ -49,4 +49,12 @@ class User < ActiveRecord::Base
   def post_tweet(tweet)
     twitter_client.update(tweet)
   end
+  
+  def favorite(tweet_id)
+    twitter_client.favorite(tweet_id)
+  end
+  
+  def retweet(tweet_id)
+    twitter_client.retweet(tweet_id)
+  end
 end

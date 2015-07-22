@@ -4,4 +4,14 @@ class TweetsController < ApplicationController
     current_user.post_tweet(params[:text])
     redirect_to dashboard_path
   end
+  
+  def update
+    current_user.favorite(params[:id])
+    redirect_to dashboard_path
+  end
+  
+  def retweet
+    current_user.retweet(params[:id])
+    redirect_to dashboard_path
+  end
 end

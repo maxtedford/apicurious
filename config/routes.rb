@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: :logout
   get '/dashboard', to: 'dashboard#index', as: :dashboard
   
-  resources :tweets, only: [:create]
+  resources :tweets, only: [:create, :update]
+  put '/tweet/:id', to: 'tweets#retweet', as: :retweet
   
   root 'welcome#index'
 end
