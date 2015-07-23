@@ -734,7 +734,7 @@
         <div class="DashboardProfileCard  module">
 
           <a class="DashboardProfileCard-bg u-bgUserColor u-block"
-             href="/Max_Tedford"
+             href="<%= current_user.name %>"
              tabindex="-1"
              aria-hidden="true">
           </a>
@@ -788,6 +788,7 @@
             <div id="dashboard-profile-prompt"></div>
 
           </div>
+          <%= link_to "Logout", logout_path, class: "submit btn primary-btn js-submit" %>
         </div>
 
 
