@@ -20,35 +20,19 @@ class UnauthenticatedUserTest < ActionDispatch::IntegrationTest
           }
         },
         credentials: {
-          token: "240955419-I69HOrP1erL7yhyFgs5exUK2JHP14bQKvWpdhPmZ",
-          secret: "YESsUryQw50W61XwKHtTAxXLgdR00p6uNBvdijnN1jlh4"
+          token: ENV["SAMPLE_OAUTH_TOKEN"],
+          secret: ENV["SAMPLE_OAUTH_TOKEN_SECRET"]
         }
       })
   end
 
-  test 'the authenticated user is logged in' do
-    visit root_path
+  test "logging in" do
+    visit "/"
+    assert_equal 200, page.status_code
     click_link "Login!"
-    
-    assert_equal dashboard_path, current_path
+    assert_equal "/", current_path
     assert page.has_content?("Max Tedford")
-    
-    visit root_path
-    
-    assert page.has_link?("Logout"), "Can't see the logout link"
-  end
-  
-  test 'the authenticated user sees their name' do
-    visit root_path
-    click_link "Login!"
-    
-    assert page.has_content?("Max Tedford"), "Name ain't there..."
-  end
-  
-  test 'the authenticated user sees their screen name' do
-    visit root_path
-    click_link "Login!"
-    
-    assert page.has_content?("maximus"), "Screen name ain't there..."
+    assert page.has_link?("Favorite! (0)")
+    assert page.has_css?("p.TweetTextSize  js-tweet-text tweet-text")
   end
 end

@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   end
   
   def current_profile
-    @user ||= twitter_client.user
+    twitter_client.user
   end
   
   def profile_pic

@@ -47,5 +47,8 @@ group :development, :test do
   
   gem 'capybara'
   gem 'pry'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'hashie'
 end
 
