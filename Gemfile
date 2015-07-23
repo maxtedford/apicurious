@@ -47,11 +47,11 @@ group :development, :test do
   
   gem 'capybara'
   gem 'pry'
-  gem 'vcr'
-  gem 'hashie'
 end
 
 group :test do
+  gem 'hashie'
+  gem 'vcr'
   gem 'webmock'
 end
 
